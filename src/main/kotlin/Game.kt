@@ -34,7 +34,3 @@ private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean): String {
     }
     return healthStatus
 }
-
-private fun lol() {
-
-}
