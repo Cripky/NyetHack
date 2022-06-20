@@ -5,6 +5,13 @@ fun main() {
         swordsJuggling = 2
     }
 
+    try {
+        proficiencyCheck(swordsJuggling)
+        swordsJuggling = swordsJuggling!!.plus(1)
+    } catch (e: java.lang.Exception) {
+        println(e)
+    }
+
     proficiencyCheck(swordsJuggling)
     swordsJuggling = swordsJuggling!!.plus(1 )
 
@@ -12,5 +19,7 @@ fun main() {
 }
 
 fun proficiencyCheck(swordsJuggling: Int?) {
-    swordsJuggling?: throw IllegalStateException("Player cannot juggle swords")
+    checkNotNull(swordsJuggling, { "Player cannot juggle sword" })
 }
+
+class UnskilledSwordJugglerException() : IllegalStateException("Player cannot juggle sword")
