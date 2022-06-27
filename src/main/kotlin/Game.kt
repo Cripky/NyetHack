@@ -4,6 +4,9 @@ fun main() {
     var isBlessed = true
     val isImmortal = false
 
+    val player = Player()
+    player.castFireball()
+
     // Аура
     val auraColor = auraColor(isBlessed, healthPoints, isImmortal)
 
@@ -11,8 +14,6 @@ fun main() {
 
     // Состояние игрока
     printPlayerStatus(auraColor, isBlessed, name, healthStatus)
-
-    castFireball()
 }
 
 private fun printPlayerStatus(
@@ -37,6 +38,3 @@ private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean) = when (he
         in 15..74 -> "looks pretty hurt."
         else -> "is in awful condition!"
 }
-
-private fun castFireball(numFireballs: Int = 2) =
-    println("A glass of Fireball springs into existence. (x$numFireballs)")
