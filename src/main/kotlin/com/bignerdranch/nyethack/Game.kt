@@ -2,7 +2,7 @@ import com.bignerdranch.nyethack.Player
 
 fun main() {
 
-    val player = Player()
+    val player = Player("Madrigal", 89, true, false)
     player.castFireball()
 
     // Аура
