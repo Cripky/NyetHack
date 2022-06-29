@@ -1,11 +1,24 @@
 package com.bignerdranch.nyethack
 
-class Player(_name: String, var healthPoints: Int, val isBlessed: Boolean, private val isImmortal: Boolean) {
+import java.io.File
+
+class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean, private val isImmortal: Boolean) {
     var name = _name
-        get() = field.capitalize()
+        get() = "${field.capitalize()} of $hometown"
         private set(value) {
             field = value.trim()
         }
+
+    val hometown = selectHometown()
+
+    init {
+        require(healthPoints > 0, {"healthPoints must be greater than zero."})
+        require(name.isNotBlank(), {"Player must have a name."})
+    }
+
+    constructor(name: String) : this(name, isBlessed = true, isImmortal = false) {
+        if (name.toLowerCase() == "kar") healthPoints = 40
+    }
 
     fun castFireball(numFireballs: Int = 2) =
         println("A glass of Fireball springs into existence. (x$numFireballs)")
@@ -22,4 +35,10 @@ class Player(_name: String, var healthPoints: Int, val isBlessed: Boolean, priva
         in 15..74 -> "looks pretty hurt."
         else -> "is in awful condition!"
     }
+
+    private fun selectHometown() = File("data/towns.txt")
+        .readText()
+        .split("\n")
+        .shuffled()
+        .first()
 }
