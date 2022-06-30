@@ -1,12 +1,14 @@
 import com.bignerdranch.nyethack.Player
+import com.bignerdranch.nyethack.Room
 
 fun main() {
 
     val player = Player("Madrigal")
     player.castFireball()
 
-    // Аура
-    val auraColor = player.auraColor()
+    var currentRoom = Room("Foyer")
+    println(currentRoom.description())
+    println(currentRoom.load())
 
     // Состояние игрока
     printPlayerStatus(player)
