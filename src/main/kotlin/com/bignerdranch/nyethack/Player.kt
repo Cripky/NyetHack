@@ -25,7 +25,7 @@ class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean,
 
     fun auraColor() = if (isBlessed && healthPoints > 50 || isImmortal) "GREEN" else "NONE"
 
-    fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean) = when (healthPoints) {
+    fun formatHealthStatus() = when (healthPoints) {
         100 -> "is in excellent condition!"
         in 90..99 -> "has a few scratches."
         in 75..89 -> if (isBlessed) {
