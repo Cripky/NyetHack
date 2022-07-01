@@ -21,7 +21,7 @@ class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean,
     }
 
     fun castFireball(numFireballs: Int = 2) =
-        println("A glass of Fireball springs into existence. (x$numFireballs)")
+        println("A glass of Fireball springs into existence. Delicious! (x$numFireballs)")
 
     fun auraColor() = if (isBlessed && healthPoints > 50 || isImmortal) "GREEN" else "NONE"
 
