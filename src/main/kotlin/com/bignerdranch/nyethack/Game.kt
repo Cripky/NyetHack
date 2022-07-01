@@ -12,9 +12,6 @@ fun main() {
 
     // Состояние игрока
     printPlayerStatus(player)
-
-    // Аура
-    player.auraColor()
 }
 
 private fun printPlayerStatus(player: Player) {

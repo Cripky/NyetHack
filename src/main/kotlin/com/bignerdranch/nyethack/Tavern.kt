@@ -1,5 +1,4 @@
 import java.io.File
-import kotlin.math.roundToInt
 
 const val TAVERN_NAME = "Taernyl's Folly"
 
@@ -39,8 +38,7 @@ fun main() {
 }
 
 private fun displayPatronBalances() {
-    patronGold.forEach {
-        patron, balance -> println("$patron, balance: ${"%.2f".format(balance)}")
+    patronGold.forEach { (patron, balance) -> println("$patron, balance: ${"%.2f".format(balance)}")
     }
 }
 
