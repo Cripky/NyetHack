@@ -1,12 +1,13 @@
 import com.bignerdranch.nyethack.Player
 import com.bignerdranch.nyethack.Room
+import com.bignerdranch.nyethack.TownSquare
 
 fun main() {
 
     val player = Player("Madrigal")
     player.castFireball()
 
-    var currentRoom = Room("Foyer")
+    var currentRoom: Room = TownSquare()
     println(currentRoom.description())
     println(currentRoom.load())
 
